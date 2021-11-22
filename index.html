@@ -102,6 +102,82 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+
+    errorBtns[0].addEventListener('click', (e) => {
+      console.log('Console Log Demo');
+    })
+
+    errorBtns[1].addEventListener('click', (e) => {
+      console.error('Console Error Demo');
+    })
+
+    errorBtns[10].addEventListener('click', (e) => {
+      console.table('Console Table Demo');
+    })
+
+    errorBtns[6].addEventListener('click', (e) => {
+      console.dir('Console Dir Demo');
+    })
+
+    errorBtns[7].addEventListener('click', (e) => {
+      console.dirxml('Console Dirxml Demo');
+    })
+
+    errorBtns[8].addEventListener('click', (e) => {
+      console.group('Console Group Demo');
+    })
+
+    errorBtns[11].addEventListener('click', (e) => {
+      console.time('Console Time Demo');
+    })
+
+    errorBtns[12].addEventListener('click', (e) => {
+      console.timeEnd('Console TimeEnd Demo');
+    })
+
+    errorBtns[13].addEventListener('click', (e) => {
+      console.trace('Console Trace Demo');
+    })
+
+    try {
+      throw new Error("test error");
+    } catch (err) {
+      alert('catch');
+    } finally {
+      alert('finally');
+    }
+
+    class CustomError extends Error {
+      constructor(message) {
+        super(message);
+        this.name = "CustomError";
+      }
+    }
+
+    function test() {
+      throw new CustomError("Oops!");
+    }
+
+    try {
+      test();
+    } catch(err) {
+      alert(err.message); // Oops!
+      alert(err.name); // CustomError
+      alert(err.stack);
+    }
+
+    if (window.onerror)
+    {
+      console.log('step 5 example');
+    }
+  </script>
+
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS && TrackJS.install({ 
+      token: "b0b6cfcd22204127afef77eba586a543"
+      // for more configuration options, see https://docs.trackjs.com
+    });
   </script>
 </body>
 
